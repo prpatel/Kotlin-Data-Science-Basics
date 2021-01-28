@@ -1,0 +1,883 @@
+{
+  "paragraphs": [
+    {
+      "text": "%kotlin\nimport krangl.*\n\nfun square(n: Int): Int \u003d n * n\nval greeter \u003d { s: String -\u003e println(\"Hello $s!\") }\nval l \u003d listOf(\"a\", \"list\", \"of\", \"strings\")\n\nprintln(square(5))\nprintln(greeter(\"Chandra\"))\nl\n// println(kc.showVars())\n// kc.showFunctions()\n\n// shift-enter to run this paragraph",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 18:54:27.686",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/kotlin",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "25\nHello Chandra!\nkotlin.Unit\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "res171: List\u003cString\u003e \u003d [a, list, of, strings]"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607403770536_802841454",
+      "id": "paragraph_1607403770536_802841454",
+      "dateCreated": "2020-12-08 00:02:50.536",
+      "dateStarted": "2020-12-08 18:54:27.689",
+      "dateFinished": "2020-12-08 18:54:49.683",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.kotlin\n\n// Spark Context!\nsc\n\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 18:57:53.433",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res4: JavaSparkContext! \u003d org.apache.spark.api.java.JavaSparkContext@81c93a80"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607403865012_633321055",
+      "id": "paragraph_1607403865012_633321055",
+      "dateCreated": "2020-12-08 00:04:25.012",
+      "dateStarted": "2020-12-08 18:57:53.436",
+      "dateFinished": "2020-12-08 18:58:00.593",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\n// not needed as we did this in first paragraph! \n// Remember that each paragraph lives in the same interpreter context\n// \n// import krangl.*\nimport java.io.File\n\n// Get all files in a directory\n\nval dataRoot \u003d File(\"/Users/prpatel/dev/datasets/nyc-taxi-trip-duration\")\ndataRoot\n    .listFiles()\n    .forEach { println(it) }",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:00:06.873",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/.DS_Store\n/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/test.csv\n/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/test.zip\n/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/train.csv\n/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/sample_submission.zip\n/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/train.zip\n/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/train1000.csv\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607405410792_909839942",
+      "id": "paragraph_1607405410792_909839942",
+      "dateCreated": "2020-12-08 00:30:10.792",
+      "dateStarted": "2020-12-08 19:00:06.877",
+      "dateFinished": "2020-12-08 19:00:13.758",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\n// Load a file and sample the first 30% of the data \n// (the referenced file only have the first 1000 rows of 1.5M of the complete dataset)\n// (this is done to make this demo load faster and not make anything explode )\n// this uses the krangl library\n\nvar allTrainData \u003d DataFrame.readCSV(\"/Users/prpatel/dev/datasets/nyc-taxi-trip-duration/train1000.csv\")\nvar trainData \u003d allTrainData.sampleFrac(0.3)\nPRINT_MAX_WIDTH \u003d 100\n//trainData\ntrainData.head()\ntrainData.schema()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:25:00.421",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame with 300 observations\nid                  [Str]  id3382236, id1445390, id1816342, id0214120, id2452510, id0835080, id2352567, id1915949, id3358294, i...\nvendor_id           [Int]  2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2, 1, 2...\npickup_datetime     [Str]  2016-01-23 10:38:43, 2016-01-19 08:00:19, 2016-01-19 17:56:19, 2016-05-11 13:03:29, 2016-02-21 19:20...\ndropoff_datetime    [Str]  2016-01-23 10:44:15, 2016-01-19 08:17:34, 2016-01-19 18:11:37, 2016-05-11 13:14:24, 2016-02-21 19:36...\npassenger_count     [Int]  5, 3, 1, 1, 6, 2, 1, 1, 1, 1, 1, 1, 2, 1, 6, 2, 4, 4, 1, 6, 3, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 4, 1, 1...\npickup_longitude    [Dbl]  -73.975, -73.96, -73.974, -73.976, -73.988, -73.979, -73.978, -73.992, -73.981, -73.947, -74.014, -7...\npickup_latitude     [Dbl]  40.761, 40.782, 40.756, 40.776, 40.728, 40.764, 40.763, 40.744, 40.734, 40.776, 40.714, 40.756, 40.7...\ndropoff_longitude   [Dbl]  -73.963, -73.972, -73.99, -73.979, -73.978, -73.991, -73.966, -73.971, -73.954, -73.973, -74.005, -7...\ndropoff_latitude    [Dbl]  40.768, 40.755, 40.752, 40.765, 40.765, 40.75, 40.801, 40.793, 40.771, 40.755, 40.705, 40.762, 40.86...\nstore_and_fwd_flag  [Str]  N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N...\ntrip_duration       [Int]  332, 1035, 918, 655, 946, 899, 866, 1259, 1642, 851, 367, 1419, 1003, 560, 518, 1330, 1280, 909, 926...\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607442641574_1201694910",
+      "id": "paragraph_1607442641574_1201694910",
+      "dateCreated": "2020-12-08 10:50:41.574",
+      "dateStarted": "2020-12-08 19:25:00.426",
+      "dateFinished": "2020-12-08 19:25:01.444",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\n// Access a dataframe\ntrainData[\"passenger_count\"]",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:25:09.656",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res181: DataCol \u003d passenger_count [Int][300]: 5, 3, 1, 1, 6, 2, 1, 1, 1, 1, 1, 1, 2, 1, 6, 2, 4, 4, 1, 6, 3, 1, 1, 1, ..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607442752542_687362987",
+      "id": "paragraph_1607442752542_687362987",
+      "dateCreated": "2020-12-08 10:52:32.542",
+      "dateStarted": "2020-12-08 19:25:09.660",
+      "dateFinished": "2020-12-08 19:25:09.713",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\n// using strings for the column name refs is tedious, create Kotlin vals for these\n/** a unique identifier for each trip*/\nval id: String \u003d \"id\"\n/** a code indicating the provider associated with the trip record*/\nval vendor_id: String \u003d \"vendor_id\"\n/** date and time when the meter was engaged*/\nval pickup_datetime: String \u003d \"pickup_datetime\"\n/** date and time when the meter was disengaged*/\nval dropoff_datetime: String \u003d \"dropoff_datetime\"\n/** the number of passengers in the vehicle (driver entered value)*/\nval passenger_count: String \u003d \"passenger_count\"\n/** the longitude where the meter was engaged*/\nval pickup_longitude: String \u003d \"pickup_longitude\"\n/** the latitude where the meter was engaged*/\nval pickup_latitude: String \u003d \"pickup_latitude\"\n/** the longitude where the meter was disengaged*/\nval dropoff_longitude: String \u003d \"dropoff_longitude\"\n/** the latitude where the meter was disengaged*/\nval dropoff_latitude: String \u003d \"dropoff_latitude\"\n/** This flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server. Y\u003dstore and forward; N\u003dnot a store and forward trip**/\nval store_and_fwd_flag: String \u003d \"store_and_fwd_flag\"\n/** duration of the trip in seconds */\nval trip_duration: String \u003d \"trip_duration\"\nval distance \u003d \"distance\"\nval month \u003d \"month\"\nval wday \u003d \"wday\"\nval hour \u003d \"hour\"\nval work \u003d \"work\"",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 17:29:22.310",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607443230751_1864648455",
+      "id": "paragraph_1607443230751_1864648455",
+      "dateCreated": "2020-12-08 11:00:30.751",
+      "dateStarted": "2020-12-08 17:29:22.313",
+      "dateFinished": "2020-12-08 17:29:22.371",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\ntrainData[passenger_count]",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:27:16.905",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res182: DataCol \u003d passenger_count [Int][300]: 5, 3, 1, 1, 6, 2, 1, 1, 1, 1, 1, 1, 2, 1, 6, 2, 4, 4, 1, 6, 3, 1, 1, 1, ..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607443302109_458687473",
+      "id": "paragraph_1607443302109_458687473",
+      "dateCreated": "2020-12-08 11:01:42.109",
+      "dateStarted": "2020-12-08 19:27:16.909",
+      "dateFinished": "2020-12-08 19:27:16.978",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\n\ntrainData.printDataClassSchema(\"taxiRides\")\n\n// now we can copy paste these rather than typing it all out!",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:27:49.254",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data class taxiRides(val id: String, val vendor_id: Int, val pickup_datetime: String, val dropoff_datetime: String, val passenger_count: Int, val pickup_longitude: Double, val pickup_latitude: Double, val dropoff_longitude: Double, val dropoff_latitude: Double, val store_and_fwd_flag: String, val trip_duration: Int)\nval records \u003d dataFrame.rowsAs\u003ctaxiRides\u003e()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607443442326_567383315",
+      "id": "paragraph_1607443442326_567383315",
+      "dateCreated": "2020-12-08 11:04:02.326",
+      "dateStarted": "2020-12-08 19:27:49.257",
+      "dateFinished": "2020-12-08 19:27:49.462",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\nimport krangl.toStrings\nimport java.time.LocalDateTime\nimport java.time.Month\nimport java.time.format.DateTimeFormatter\n\ndata class taxiRides(val id: String, val vendor_id: Int, val pickup_datetime: String, val dropoff_datetime: String, val passenger_count: Int, val pickup_longitude: Double, val pickup_latitude: Double, val dropoff_longitude: Double, val dropoff_latitude: Double, val store_and_fwd_flag: String, val trip_duration: Int)\n val records \u003d trainData.rowsAs\u003ctaxiRides\u003e()\n\n println(\"Here is the record: ${ records.take(1)}\")\n\nprintln(trainData[pickup_datetime].toStrings().first())\nval aDate \u003d trainData[pickup_datetime].toStrings().first()\nval datePattern  \u003d DateTimeFormatter.ofPattern(\"yyyy-MM-dd HH:mm:ss\");\nval oneDate \u003d LocalDateTime.parse(aDate!!, datePattern);\n println(oneDate)",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:30:22.739",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Here is the record: [taxiRides(id\u003did3382236, vendor_id\u003d2, pickup_datetime\u003d2016-01-23 10:38:43, dropoff_datetime\u003d2016-01-23 10:44:15, passenger_count\u003d5, pickup_longitude\u003d-73.97528076171875, pickup_latitude\u003d40.760990142822266, dropoff_longitude\u003d-73.96318054199219, dropoff_latitude\u003d40.76776123046875, store_and_fwd_flag\u003dN, trip_duration\u003d332)]\n2016-01-23 10:38:43\n2016-01-23T10:38:43\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607444693902_1518595922",
+      "id": "paragraph_1607444693902_1518595922",
+      "dateCreated": "2020-12-08 11:24:53.902",
+      "dateStarted": "2020-12-08 19:30:22.743",
+      "dateFinished": "2020-12-08 19:30:50.409",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\nimport java.lang.Math.*\nimport java.time.DayOfWeek\nimport java.time.LocalDateTime\nimport java.time.Month\nimport java.time.format.DateTimeFormatter\n\nfun prepareFeatures(trainData: DataFrame): DataFrame {\n    var trainData \u003d trainData\n    val datePattern \u003d DateTimeFormatter.ofPattern(\"yyyy-MM-dd HH:mm:ss\")\n\n    // LIVE@KC explore date format\n    val aDate \u003d trainData[pickup_datetime].toStrings().first()\n    LocalDateTime.parse(aDate!!, datePattern)\n\n    trainData \u003d trainData.addColumns(\n        pickup_datetime `\u003d` { it[pickup_datetime].map\u003cString\u003e { LocalDateTime.parse(it, datePattern) } }\n    )\n    //https://stackoverflow.com/questions/639695/how-to-convert-latitude-or-longitude-to-meters\n    val coordDistance \u003d fun(lon1: Double, lat1: Double, lon2: Double, lat2: Double): Int {\n        val R \u003d 6378.137                                // radius of earth in Km\n        val dLat \u003d (lat2 - lat1) * PI / 180\n        val dLon \u003d (lon2 - lon1) * PI / 180\n        val a \u003d pow(sin((dLat / 2)), 2.0) + cos(lat1 * PI / 180) * cos(lat2 * PI / 180) * pow(sin(dLon / 2), 2.0)\n        val c \u003d 2 * atan2(sqrt(a), sqrt(1 - a))\n        val d \u003d R * c\n        return (d * 1000).toInt()                           // distance in meters\n    }\n\n    trainData \u003d trainData.addColumn(distance) {\n        df.rows.map { row -\u003e\n            coordDistance(\n                row[pickup_longitude] as Double,\n                row[pickup_latitude] as Double,\n                row[dropoff_longitude] as Double,\n                row[dropoff_latitude] as Double\n            )\n        }\n    }\n\n    trainData \u003d trainData.addColumns(\n        // month `\u003d` { it[pickup_datetime].asType\u003cLocalDateTime\u003e().mapNonNull { it.month } },\n        month `\u003d` { it[pickup_datetime].map\u003cLocalDateTime\u003e() { it.month } },\n        wday `\u003d` { it[pickup_datetime].asType\u003cLocalDateTime\u003e().mapNonNull { it.dayOfWeek } },\n        hour `\u003d` { it[pickup_datetime].asType\u003cLocalDateTime\u003e().mapNonNull { it.hour } },\n        work `\u003d` { it[hour].map\u003cInt\u003e { (8..18).contains(it) } }\n    )\n\n    return trainData\n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:37:27.894",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607445606328_1629976593",
+      "id": "paragraph_1607445606328_1629976593",
+      "dateCreated": "2020-12-08 11:40:06.328",
+      "dateStarted": "2020-12-08 19:37:27.897",
+      "dateFinished": "2020-12-08 19:37:40.371",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\ntrainData \u003d prepareFeatures(trainData)\ntrainData.schema()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:38:17.560",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame with 300 observations\nid                  [Str]            id3382236, id1445390, id1816342, id0214120, id2452510, id0835080, id2352567, id1915949, id3358294, i...\nvendor_id           [Int]            2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2, 1, 2...\npickup_datetime     [LocalDateTime]  2016-01-23T10:38:43, 2016-01-19T08:00:19, 2016-01-19T17:56:19, 2016-05-11T13:03:29, 2016-02-21T19:20...\ndropoff_datetime    [Str]            2016-01-23 10:44:15, 2016-01-19 08:17:34, 2016-01-19 18:11:37, 2016-05-11 13:14:24, 2016-02-21 19:36...\npassenger_count     [Int]            5, 3, 1, 1, 6, 2, 1, 1, 1, 1, 1, 1, 2, 1, 6, 2, 4, 4, 1, 6, 3, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 4, 1, 1...\npickup_longitude    [Dbl]            -73.975, -73.96, -73.974, -73.976, -73.988, -73.979, -73.978, -73.992, -73.981, -73.947, -74.014, -7...\npickup_latitude     [Dbl]            40.761, 40.782, 40.756, 40.776, 40.728, 40.764, 40.763, 40.744, 40.734, 40.776, 40.714, 40.756, 40.7...\ndropoff_longitude   [Dbl]            -73.963, -73.972, -73.99, -73.979, -73.978, -73.991, -73.966, -73.971, -73.954, -73.973, -74.005, -7...\ndropoff_latitude    [Dbl]            40.768, 40.755, 40.752, 40.765, 40.765, 40.75, 40.801, 40.793, 40.771, 40.755, 40.705, 40.762, 40.86...\nstore_and_fwd_flag  [Str]            N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N, N...\ntrip_duration       [Int]            332, 1035, 918, 655, 946, 899, 866, 1259, 1642, 851, 367, 1419, 1003, 560, 518, 1330, 1280, 909, 926...\ndistance            [Int]            1268, 3158, 1405, 1233, 4145, 1849, 4339, 5720, 4769, 3172, 1249, 1666, 13125, 2793, 2305, 3373, 100...\nmonth               [Month]          JANUARY, JANUARY, JANUARY, MAY, FEBRUARY, APRIL, APRIL, FEBRUARY, FEBRUARY, FEBRUARY, APRIL, JUNE, J...\nwday                [DayOfWeek]      SATURDAY, TUESDAY, TUESDAY, WEDNESDAY, SUNDAY, SATURDAY, TUESDAY, THURSDAY, TUESDAY, WEDNESDAY, FRID...\nhour                [Int]            10, 8, 17, 13, 19, 13, 20, 16, 16, 7, 14, 15, 22, 12, 5, 20, 2, 6, 19, 10, 23, 9, 0, 11, 15, 3, 17, ...\nwork                [Bol]            true, true, true, true, false, true, false, true, true, false, true, true, false, true, false, false...\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607446155184_1366912539",
+      "id": "paragraph_1607446155184_1366912539",
+      "dateCreated": "2020-12-08 11:49:15.184",
+      "dateStarted": "2020-12-08 19:38:17.563",
+      "dateFinished": "2020-12-08 19:38:17.924",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val twocolumns \u003d trainData.select(distance ,trip_duration)\nprintln(twocolumns.asString(title \u003d\"distance, trip_duration\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:40:09.086",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "distance [Int][300]: 1699, 257, 1352, 1571, 4404, 6968, 3013, 723, 1784, 2793, 2624, 2414, 2082, 123...": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "distance, trip_duration: 300 x 2\n     distance   trip_duration\n 1       1268             332\n 2       3158            1035\n 3       1405             918\n 4       1233             655\n 5       4145             946\n 6       1849             899\n 7       4339             866\n 8       5720            1259\n 9       4769            1642\n10       3172             851\nand 290 more rows\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607466357046_1387177222",
+      "id": "paragraph_1607466357046_1387177222",
+      "dateCreated": "2020-12-08 17:25:57.046",
+      "dateStarted": "2020-12-08 19:40:09.091",
+      "dateFinished": "2020-12-08 19:40:17.441",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val filteredLowDuration \u003d trainData.filter { it[trip_duration] lt 1000 }\nfilteredLowDuration.select(\"distance\" ,\"trip_duration\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:41:02.074",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res190: DataFrame \u003d A DataFrame: 204 x 2\n     distance   trip_duration\n 1       1268             332\n 2       1405             918\n 3       1233             655\n 4       4145             946\n 5       1849             899\n 6       4339             866\n 7       3172             851\n 8       1249             367\n 9       2793             560\n10       2305             518\nand 194 more rows"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607467178199_1658557294",
+      "id": "paragraph_1607467178199_1658557294",
+      "dateCreated": "2020-12-08 17:39:38.199",
+      "dateStarted": "2020-12-08 19:41:02.078",
+      "dateFinished": "2020-12-08 19:41:02.398",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val addSpeedColumn \u003d trainData.addColumn(\"speed\") { it[distance] / it[trip_duration] * 3.6 }\nprintln( addSpeedColumn.select(\"distance\" ,\"trip_duration\", \"speed\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:42:18.793",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "A DataFrame: 300 x 3\n     distance   trip_duration    speed\n 1       1268             332   13.749\n 2       3158            1035   10.984\n 3       1405             918     5.51\n 4       1233             655    6.777\n 5       4145             946   15.774\n 6       1849             899    7.404\n 7       4339             866   18.037\n 8       5720            1259   16.356\n 9       4769            1642   10.456\n10       3172             851   13.419\nand 290 more rows\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607467277493_1536000919",
+      "id": "paragraph_1607467277493_1536000919",
+      "dateCreated": "2020-12-08 17:41:17.493",
+      "dateStarted": "2020-12-08 19:42:18.798",
+      "dateFinished": "2020-12-08 19:42:25.874",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val sortedBySpeed \u003d addSpeedColumn.sortedBy(\"speed\", distance)\n// val sortedBySpeed \u003d addSpeedColumn.sortedBy { it[\"speed\"].asInts() }\n\nprintln( sortedBySpeed.select(\"distance\" ,\"trip_duration\", \"speed\"))\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:43:16.974",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "A DataFrame: 300 x 3\n     distance   trip_duration   speed\n 1         44            1905   0.083\n 2          3              40    0.27\n 3       1028            1198   3.089\n 4        336             373   3.243\n 5        764             751   3.662\n 6       1060             972   3.926\n 7       1666            1419   4.227\n 8       1193             962   4.464\n 9        586             457   4.616\n10        902             695   4.672\nand 290 more rows\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607467388262_487398732",
+      "id": "paragraph_1607467388262_487398732",
+      "dateCreated": "2020-12-08 17:43:08.262",
+      "dateStarted": "2020-12-08 19:43:16.979",
+      "dateFinished": "2020-12-08 19:43:26.170",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%kotlin\nprintln(\"%table\\n\")\n println(\"distance\\ttrip_duration\\tspeed\")\nsortedBySpeed.rows.map{ row -\u003e println(\"${row[distance]}\\t${row[trip_duration])}\\t${row[\"speed\"}\")}",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 19:54:49.947",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 300.0,
+              "optionOpen": true,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "A DataFrame: 300 x 160",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 250.0
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "updated": false,
+                    "names": {
+                      "distance": "string",
+                      "trip_duration": "string"
+                    }
+                  },
+                  "updated": false,
+                  "initialized": false,
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  }
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "pieChart": {},
+                "scatterChart": {}
+              },
+              "keys": [
+                {
+                  "name": "distance",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "speed",
+                  "index": 2.0,
+                  "aggr": "sum"
+                }
+              ],
+              "commonSetting": {}
+            },
+            "helium": {}
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "kotlin.Unit": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "kotlin.Unit",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": []
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "distance\ttrip_duration\tspeed\n44\t1905\t0.0831496062992126\n3\t40\t0.27\n1028\t1198\t3.0891485809682804\n336\t373\t3.2428954423592495\n764\t751\t3.6623169107856195\n1060\t972\t3.925925925925926\n1666\t1419\t4.226638477801269\n1193\t962\t4.464449064449065\n586\t457\t4.616192560175055\n902\t695\t4.672230215827338\n1526\t1074\t5.115083798882681\n2840\t1976\t5.174089068825911\n1301\t900\t5.204\n1419\t976\t5.234016393442623\n1037\t706\t5.2878186968838525\n3431\t2316\t5.3331606217616585\n2150\t1447\t5.34899792674499\n1972\t1304\t5.444171779141104\n2785\t1826\t5.490690032858708\n1405\t918\t5.509803921568627\n3552\t2246\t5.6933214603739986\n1628\t1013\t5.78558736426456\n1940\t1181\t5.913632514817952\n755\t459\t5.921568627450981\n1272\t773\t5.9239327296248385\n643\t389\t5.950642673521851\n2941\t1777\t5.958131682611143\n573\t346\t5.961849710982659\n3013\t1813\t5.982790954219526\n1861\t1114\t6.014003590664274\n1182\t707\t6.018670438472419\n2932\t1748\t6.038443935926773\n1010\t598\t6.080267558528428\n1521\t878\t6.236446469248292\n1363\t785\t6.250700636942676\n1571\t898\t6.297995545657016\n4563\t2607\t6.301035673187572\n1075\t589\t6.570458404074703\n454\t248\t6.590322580645161\n1873\t1001\t6.736063936063936\n1233\t655\t6.7767938931297715\n6675\t3510\t6.846153846153846\n3067\t1570\t7.032611464968153\n1840\t940\t7.046808510638297\n2951\t1488\t7.139516129032258\n978\t493\t7.14158215010142\n856\t430\t7.166511627906977\n1821\t913\t7.180284775465498\n1024\t513\t7.185964912280702\n1861\t922\t7.266377440347072\n3956\t1945\t7.322159383033419\n1475\t725\t7.324137931034483\n670\t328\t7.353658536585366\n1137\t553\t7.401808318264015\n1849\t899\t7.404226918798665\n1474\t704\t7.5375000000000005\n1352\t637\t7.640816326530613\n2229\t1050\t7.642285714285714\n591\t275\t7.736727272727272\n3225\t1499\t7.745163442294864\n2235\t1034\t7.781431334622824\n1088\t496\t7.896774193548387\n5905\t2678\t7.9380134428678115\n1520\t681\t8.035242290748899\n3124\t1389\t8.096760259179266\n2565\t1126\t8.200710479573713\n738\t315\t8.434285714285714\n4767\t2026\t8.470483711747287\n1646\t695\t8.526043165467625\n1378\t580\t8.553103448275863\n2631\t1105\t8.57158371040724\n2358\t989\t8.583215369059657\n1367\t566\t8.694699646643109\n529\t218\t8.735779816513762\n1757\t717\t8.821757322175731\n976\t395\t8.89518987341772\n2152\t865\t8.956300578034682\n2961\t1188\t8.972727272727273\n3373\t1330\t9.129924812030076\n4052\t1587\t9.191682419659736\n1219\t477\t9.2\n4005\t1561\t9.236386931454195\n4789\t1863\t9.254106280193236\n1563\t603\t9.33134328358209\n1084\t411\t9.494890510948904\n1667\t631\t9.510618066561014\n1699\t640\t9.556875\n1905\t712\t9.632022471910112\n1488\t556\t9.634532374100718\n692\t257\t9.693385214007783\n3852\t1427\t9.717729502452698\n3810\t1402\t9.783166904422254\n1807\t663\t9.811764705882354\n3546\t1301\t9.812144504227518\n3165\t1145\t9.95109170305677\n795\t286\t10.006993006993007\n3783\t1360\t10.013823529411765\n1285\t456\t10.144736842105264\n623\t221\t10.148416289592761\n2527\t892\t10.198654708520179\n1888\t662\t10.267069486404834\n1470\t515\t10.275728155339806\n891\t312\t10.28076923076923\n1853\t643\t10.374494556765164\n4753\t1647\t10.389071038251366\n5446\t1881\t10.422966507177033\n4769\t1642\t10.4557856272838\n625\t215\t10.465116279069766\n2035\t681\t10.757709251101321\n3810\t1274\t10.766091051805338\n1395\t464\t10.823275862068966\n3158\t1035\t10.984347826086957\n1881\t616\t10.992857142857142\n765\t248\t11.104838709677418\n2800\t897\t11.237458193979933\n1113\t356\t11.25505617977528\n674\t215\t11.285581395348839\n718\t228\t11.336842105263157\n1148\t363\t11.38512396694215\n2873\t905\t11.428508287292818\n1691\t527\t11.551423149905123\n1125\t350\t11.571428571428573\n6535\t2016\t11.669642857142858\n1419\t435\t11.74344827586207\n1994\t606\t11.845544554455445\n3176\t962\t11.885239085239085\n674\t204\t11.894117647058824\n982\t297\t11.903030303030302\n5227\t1563\t12.03915547024952\n418\t123\t12.234146341463415\n878\t258\t12.251162790697673\n1249\t367\t12.251771117166214\n1458\t428\t12.26355140186916\n972\t285\t12.277894736842105\n4978\t1458\t12.291358024691357\n3172\t926\t12.331749460043197\n4375\t1272\t12.382075471698114\n3024\t873\t12.470103092783505\n3231\t927\t12.54757281553398\n2799\t800\t12.5955\n853\t242\t12.689256198347108\n2191\t620\t12.721935483870967\n791\t222\t12.827027027027027\n1426\t400\t12.834\n1284\t357\t12.947899159663866\n1423\t391\t13.101790281329924\n3131\t859\t13.121769499417928\n1609\t441\t13.13469387755102\n623\t170\t13.192941176470589\n4341\t1179\t13.254961832061069\n3307\t897\t13.272240802675585\n2864\t771\t13.372762645914397\n3172\t851\t13.418566392479436\n2326\t623\t13.440770465489567\n314\t84\t13.457142857142857\n4314\t1148\t13.52822299651568\n5140\t1367\t13.536210680321872\n10654\t2817\t13.615335463258786\n3046\t803\t13.655790784557908\n1316\t345\t13.732173913043479\n1268\t332\t13.749397590361445\n2674\t697\t13.81119081779053\n2213\t574\t13.879442508710802\n1809\t468\t13.915384615384616\n1338\t337\t14.293175074183976\n3480\t876\t14.301369863013699\n2519\t630\t14.394285714285715\n1386\t346\t14.420809248554914\n2503\t624\t14.440384615384616\n2127\t530\t14.44754716981132\n1724\t428\t14.500934579439253\n3893\t963\t14.553271028037384\n1753\t426\t14.814084507042255\n1104\t268\t14.829850746268658\n1472\t356\t14.885393258426967\n6182\t1486\t14.976581426648723\n5126\t1225\t15.064163265306124\n5523\t1319\t15.074147081122062\n2146\t509\t15.177996070726914\n856\t203\t15.180295566502464\n9950\t2331\t15.366795366795367\n5091\t1191\t15.388413098236777\n2624\t613\t15.410114192495922\n1847\t430\t15.46325581395349\n2403\t558\t15.503225806451614\n4573\t1058\t15.560302457466918\n2233\t515\t15.609320388349515\n4145\t946\t15.773784355179705\n4504\t1022\t15.865362035225049\n3309\t750\t15.8832\n2413\t544\t15.968382352941177\n2305\t518\t16.019305019305023\n845\t189\t16.095238095238095\n2461\t549\t16.13770491803279\n1720\t383\t16.16710182767624\n5720\t1259\t16.35583796664019\n9095\t1959\t16.71362940275651\n6637\t1416\t16.873728813559325\n3946\t831\t17.094584837545128\n8472\t1784\t17.09596412556054\n2827\t594\t17.133333333333336\n1129\t236\t17.222033898305085\n422\t87\t17.462068965517243\n11218\t2275\t17.75156043956044\n3508\t711\t17.7620253164557\n1697\t342\t17.86315789473684\n2793\t560\t17.955\n1843\t369\t17.98048780487805\n5237\t1047\t18.006876790830944\n4339\t866\t18.03741339491917\n3717\t741\t18.0582995951417\n10680\t2120\t18.135849056603774\n14097\t2753\t18.43414456956048\n5345\t1039\t18.51973051010587\n2508\t486\t18.57777777777778\n7227\t1393\t18.677099784637473\n3044\t581\t18.86127366609294\n2558\t487\t18.909240246406572\n930\t175\t19.13142857142857\n3503\t654\t19.282568807339448\n618\t115\t19.34608695652174\n3742\t694\t19.410951008645533\n3097\t573\t19.45759162303665\n4252\t785\t19.499617834394904\n7372\t1356\t19.571681415929206\n4045\t744\t19.57258064516129\n6660\t1221\t19.636363636363637\n7044\t1290\t19.657674418604653\n4749\t869\t19.673647871116227\n3854\t702\t19.764102564102565\n912\t165\t19.89818181818182\n4534\t819\t19.92967032967033\n2128\t383\t20.002088772845955\n5303\t950\t20.095578947368423\n3379\t605\t20.106446280991737\n5077\t909\t20.106930693069305\n1868\t333\t20.194594594594594\n3313\t589\t20.249235993208828\n1390\t247\t20.25910931174089\n6464\t1143\t20.359055118110238\n7320\t1292\t20.396284829721363\n9818\t1728\t20.454166666666666\n2405\t422\t20.516587677725116\n912\t159\t20.649056603773584\n2918\t506\t20.760474308300395\n2761\t473\t21.013953488372092\n4292\t734\t21.050681198910084\n2457\t419\t21.110262529832937\n2354\t401\t21.133167082294264\n3031\t514\t21.22879377431907\n3132\t526\t21.43574144486692\n1587\t266\t21.478195488721806\n3801\t622\t21.99935691318328\n6561\t1064\t22.19887218045113\n2324\t376\t22.251063829787235\n5025\t795\t22.754716981132077\n2076\t327\t22.855045871559636\n5075\t794\t23.01007556675063\n3700\t577\t23.084922010398614\n3067\t476\t23.195798319327732\n8647\t1336\t23.300299401197606\n9314\t1371\t24.456892778993435\n4686\t688\t24.519767441860466\n7475\t1093\t24.62031107044831\n8154\t1180\t24.876610169491524\n6237\t896\t25.059375\n4085\t586\t25.09556313993174\n5759\t824\t25.160679611650487\n823\t116\t25.54137931034483\n2431\t342\t25.589473684210528\n2319\t322\t25.92670807453416\n8953\t1219\t26.440360951599672\n7357\t998\t26.53827655310621\n1918\t256\t26.971875\n12790\t1694\t27.180637544273907\n6461\t853\t27.26799531066823\n2235\t294\t27.367346938775512\n20923\t2743\t27.460007291286914\n1414\t185\t27.515675675675677\n2579\t335\t27.714626865671644\n6154\t794\t27.902267002518894\n8024\t1030\t28.045048543689322\n10053\t1280\t28.2740625\n4621\t583\t28.534476843910806\n19830\t2453\t29.102323685283327\n17126\t2066\t29.842013552758957\n13249\t1558\t30.613863928112966\n22025\t2566\t30.900233826968044\n7100\t820\t31.170731707317074\n6105\t675\t32.56\n3714\t392\t34.108163265306125\n6689\t706\t34.10821529745043\n19882\t2065\t34.661113801452785\n6832\t666\t36.929729729729736\n19612\t1884\t37.47515923566879\n18794\t1782\t37.96767676767677\n1534\t139\t39.7294964028777\n17360\t1557\t40.138728323699425\n13125\t1003\t47.1086739780658\n45166\t2534\t64.1663772691397\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "res197: List\u003cUnit\u003e \u003d [kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit, kotlin.Unit]"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607462509746_1225419553",
+      "id": "paragraph_1607462509746_1225419553",
+      "dateCreated": "2020-12-08 16:21:49.746",
+      "dateStarted": "2020-12-08 19:51:48.707",
+      "dateFinished": "2020-12-08 19:52:23.086",
+      "status": "FINISHED"
+    },
+    {
+      "text": "trainData.print()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 17:29:42.112",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "A DataFrame: 300 x 16\n            id   vendor_id       pickup_datetime      dropoff_datetime   passenger_count\n 1   id2873647           1   2016-01-18T12:54:42   2016-01-18 13:05:22                 1\n 2   id1000147           2   2016-06-10T15:55:33   2016-06-10 15:59:22                 1\n 3   id2663024           1   2016-05-04T14:55:36   2016-05-04 15:05:13                 3\n 4   id1497423           1   2016-02-25T13:40:47   2016-02-25 13:54:12                 1\n 5   id0642318           2   2016-04-04T09:21:49   2016-04-04 09:37:51                 1\n 6   id0564872           2   2016-01-20T19:23:52   2016-01-20 19:53:22                 2\n 7   id2067010           2   2016-03-22T12:36:22   2016-03-22 13:06:35                 3\n 8   id1497574           2   2016-03-01T18:42:04   2016-03-01 18:46:30                 6\n 9   id3190007           2   2016-01-07T15:26:03   2016-01-07 15:38:17                 1\n10   id3514394           2   2016-03-31T12:06:41   2016-03-31 12:16:01                 1\nand 290 more rows, and and 11 more variables: pickup_latitude, dropoff_longitude, dropoff_latitude,\nstore_and_fwd_flag, trip_duration, distance, month, wday, hour, work\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607464203366_1131077429",
+      "id": "paragraph_1607464203366_1131077429",
+      "dateCreated": "2020-12-08 16:50:03.366",
+      "dateStarted": "2020-12-08 17:29:42.115",
+      "dateFinished": "2020-12-08 17:29:42.781",
+      "status": "FINISHED"
+    },
+    {
+      "text": "trainData.plot(x \u003d passenger_count.asDiscreteVariable)\n    .geomBar()\n    .xLabel(\"# Passengers\")\n    .show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-08 17:39:09.291",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "kotlin",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/kotlin"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Unresolved reference: plot\nUnresolved reference: asDiscreteVariable"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607466436033_2028296273",
+      "id": "paragraph_1607466436033_2028296273",
+      "dateCreated": "2020-12-08 17:27:16.033",
+      "dateStarted": "2020-12-08 17:39:09.294",
+      "dateFinished": "2020-12-08 17:39:09.513",
+      "status": "ERROR"
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607467149294_2075189705",
+      "id": "paragraph_1607467149294_2075189705",
+      "dateCreated": "2020-12-08 17:39:09.294",
+      "status": "READY"
+    }
+  ],
+  "name": "Kotlin Data Science Basics",
+  "id": "2FU5WGSJU",
+  "defaultInterpreterGroup": "kotlin",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": false
+  }
+}
